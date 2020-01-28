@@ -1,0 +1,56 @@
+@import "../styles/reset.scss";
+@import "../styles/variables.scss";
+
+// default layout and styling
+
+html {
+  font-size: 15px;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1vw 1fr 1vw;
+  grid-template-rows: 1vw 1fr 1vw;
+}
+
+// layout
+
+main {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  column-gap: 1vw;
+  #left-pane {
+    display: grid;
+    grid-template-rows: 4fr 6fr;
+    row-gap: 1vw;
+  }
+  #center-pane {
+    background-color: $light-pink;
+  }
+  #right-pane {
+    background-color: $light-yellow;
+  }
+}
+
+#left-pane {
+  #container-userpanel {
+    background-color: $light-blue;
+  }
+  #container-calendar {
+    background-color: $light-green;
+  }
+}
+
+// common
+
+$major-containers: userpanel, calendar, tasks, details;
+
+@each $container in $major-containers {
+  #container-#{$container} {
+    padding: 1vw;
+  };
+};
