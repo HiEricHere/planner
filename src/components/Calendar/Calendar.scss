@@ -1,0 +1,30 @@
+#container-calendar {
+  display: grid;
+  grid-template-rows: max-content max-content minmax(max-content, 1fr);
+  row-gap: 1vw;
+  align-items: center;
+  justify-items: center;
+}
+
+#nav-calendar-micro {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(1rem, 2rem) auto;
+  row-gap: 1vw;
+  h6 {
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: center;
+  }
+  #day-list {
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(1rem, 2rem));
+    align-items: center;
+    justify-items: center;
+    column-gap: 0.5vw;
+    row-gap: 0.5vw;
+  }
+}
